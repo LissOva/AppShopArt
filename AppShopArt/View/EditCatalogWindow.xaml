@@ -1,0 +1,49 @@
+﻿<Window x:Class="AppShopArt.View.EditCatalogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppShopArt.View"
+        mc:Ignorable="d"
+        Title="Редактор каталога"
+        Height="650" Width="750" MinHeight="650" MinWidth="450"
+        Closing="Window_Closing">
+    <Grid Background="#FFE1F7F9">
+        <!--Главная разметка по строкам-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <!--Внутренняя разметка 0 строки - Заголовок-->
+        <Grid Grid.Row="0" Background="Azure">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="60"/>
+            </Grid.ColumnDefinitions>
+            <!--Элементы 0 строки - Заголовок-->
+            <Image Grid.Column="0" Source="..\Resources\edit-100.png" Stretch="Uniform"></Image>
+            <TextBlock Grid.Column="1" Text="Редактор каталога" Style="{StaticResource MainTitle}"/>
+            <Button Name="butBack" Grid.Column="2" Style="{StaticResource butNavig}" Click="butBack_Click">
+                <TextBlock Text="Назад" Style="{StaticResource SmallText}"/>
+            </Button>
+        </Grid>
+        <!--Внутренняя разметка 1 строки - Меню-->
+        <Grid Grid.Row="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="..\Resources\background.png"></ImageBrush>
+            </Grid.Background>
+        </Grid>
+        <!--Внутренняя разметка 2 строки - Подвал-->
+        <Grid Grid.Row="2" Background="Azure">
+            <!--Элементы 2 строки - Подвал-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Copyright © Kolygina Elizaveta" Style="{StaticResource HelpText}"/>
+            <TextBlock Grid.Column="1" Text="Telegram: @LiziksSova" Style="{StaticResource HelpText}"/>
+        </Grid>
+    </Grid>
+</Window>

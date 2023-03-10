@@ -1,0 +1,45 @@
+﻿<Application x:Class="AppShopArt.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AppShopArt"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!--Шрифты-->
+        <Style x:Key="BasedText" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#FF0B0946"/>
+            <Setter Property="FontFamily" Value=".\Resources\vag-world-bold.ttf #VAG World Bold"/>
+        </Style>
+        <Style x:Key="MainTitle" TargetType="TextBlock" BasedOn="{StaticResource BasedText}">
+            <Setter Property="FontSize"  Value="35"/>
+
+        </Style>
+        <Style x:Key="Title" TargetType="TextBlock" BasedOn="{StaticResource BasedText}">
+            <Setter Property="FontSize" Value="26"/>
+        </Style>
+        <Style x:Key="SmallText" TargetType="TextBlock" BasedOn="{StaticResource BasedText}">
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <Style x:Key="HelpText" TargetType="TextBlock" BasedOn="{StaticResource SmallText}">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="Gray"/>
+        </Style>
+        <!--Кнопки-->
+        <Style x:Key="BasedBut" TargetType="Button">
+            <Setter Property="Background" Value="Azure"/>
+            <Setter Property="BorderBrush" Value="#FF0B0946"/>
+            <Setter Property="BorderThickness" Value="3"/>
+        </Style>
+        <Style x:Key="butMenu" TargetType="Button" BasedOn="{StaticResource BasedBut}">
+            <Setter Property="Margin" Value="80 55 80 60"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="MaxWidth" Value="550"/>
+        </Style>
+        <Style x:Key="butNavig" TargetType="Button" BasedOn="{StaticResource BasedBut}">
+            <Setter Property="Margin" Value="5 10 5 10"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+    </Application.Resources>
+</Application>
