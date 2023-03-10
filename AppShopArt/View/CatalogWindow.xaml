@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AppShopArt.View"
         mc:Ignorable="d"
        Title="Каталог"
-        Height="650" Width="450" MinHeight="650" MinWidth="450"
+        Height="650" Width="750" MinHeight="650" MinWidth="450"
         Closing="Window_Closing">
     <Grid Background="#FFE1F7F9">
         <!--Главная разметка по строкам-->
@@ -38,6 +38,14 @@
             <Grid.Background>
                 <ImageBrush ImageSource="..\Resources\background.png"></ImageBrush>
             </Grid.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <ListBox x:Name="listSection" Grid.Column="0" Style="{StaticResource TitleItem}" SelectionChanged="listSection_SelectionChanged" Background="#99F0FFFF" BorderBrush="{x:Null}" />
+                <ListBox x:Name="listItem" Grid.Column="1" Style="{StaticResource TitleItem}" SelectionChanged="listSection_SelectionChanged" Background="#340B0946" BorderBrush="{x:Null}" />
+            </Grid>
         </Grid>
         <!--Внутренняя разметка 2 строки - Подвал-->
         <Grid Grid.Row="2" Background="Azure">

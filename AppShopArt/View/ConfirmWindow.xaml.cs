@@ -46,7 +46,7 @@ namespace AppShopArt.View
             this.orderSum = orderWindow.orderSum;
             this.allSum =orderWindow.allSum;
             orderSumText.Text = "Cумма заказа: " + orderSum.ToString();
-            allSumText.Text = "Всего денег: " + allSum.ToString();
+            allSumText.Text = "На карте: " + allSum.ToString();
         }
 
         private void butBack_Click(object sender, RoutedEventArgs e)//вернуться в окно заказа

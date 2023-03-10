@@ -29,9 +29,9 @@ namespace AppShopArt.View
         public OrderWindow(double sum)//перегрузка на передачу данных суммы
         {
             InitializeComponent();
-            this.orderSum = sum;
-            orderSumText.Text = "Сумма заказа: " + orderSum.ToString();
-            this.allSum = random.Next(100000);
+            this.allSum = sum;
+            //orderSumText.Text = "На карте: " + allSum.ToString();
+            this.orderSum = random.Next(100000);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)//закрыть окно, вернуть ся в главное меню

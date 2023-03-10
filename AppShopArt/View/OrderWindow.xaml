@@ -34,10 +34,17 @@
             <Grid.Background>
                 <ImageBrush ImageSource="..\Resources\background.png"></ImageBrush>
             </Grid.Background>
-            <TextBlock Name="orderSumText" Text="Сумма заказа:" Style="{StaticResource SmallText}" RenderTransformOrigin="0.447,0.709" Width="300" Margin="0,416,0,0" VerticalAlignment="Top"/>
-            <Button Name="butConfirm" Style="{StaticResource BasedBut}" VerticalAlignment="Bottom" Margin="0 0 0 20" Click="butConfirm_Click" MaxWidth="300">
-                <TextBlock Text="Подтвердить" Style="{StaticResource Title}"/>
-            </Button>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="70" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="1" Name="orderSumText" Text="На карте:" Style="{StaticResource SmallText}"/>
+                <Button Grid.Row="2" Name="butConfirm" Style="{StaticResource BasedBut}" VerticalAlignment="Bottom" Margin="5" Click="butConfirm_Click" MaxWidth="300">
+                    <TextBlock Text="Подтвердить" Style="{StaticResource Title}"/>
+                </Button>
+            </Grid>
         </Grid>
         <!--Внутренняя разметка 2 строки - Подвал-->
         <Grid Grid.Row="2" Background="Azure">

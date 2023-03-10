@@ -21,9 +21,31 @@ namespace AppShopArt.View
     /// </summary>
     public partial class CatalogWindow : Window
     {
+        List<string> listSec = new List<string>();
+        private void GetSheetsName()
+        {
+            if (File.Exists(App.fileCatalog))
+            {
+                App.excelBook = App.excelApp.Workbooks.Open(App.fileCatalog);
+                listSection.Items.Clear();
+                int n = App.excelBook.Worksheets.Count;
+                foreach (Excel.Worksheet it in App.excelBook.Worksheets)
+                {
+                    listSec.Add(it.Name);
+                }
+                listSection.ItemsSource = listSec;
+            }
+            else
+            {
+                MessageBox.Show("Неудалось найти файл!", "Файл не найден", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void GetItem() { }
         public CatalogWindow()
         {
             InitializeComponent();
+            GetSheetsName();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -60,6 +82,11 @@ namespace AppShopArt.View
             {
                 MessageBox.Show("Неудалось найти файл!", "Файл не найден", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void listSection_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
