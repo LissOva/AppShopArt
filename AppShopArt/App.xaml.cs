@@ -24,6 +24,6 @@ namespace AppShopArt
         public static Excel.Application excelApp;
         public static Excel.Workbook excelBook;
         public static Excel.Worksheet excelSheet;
-        public static Excel.Range excelRange;
+        public static Excel.Range excelCells;
     }
 }

@@ -33,7 +33,7 @@
                 <TextBlock Text="Назад" Style="{StaticResource SmallText}"/>
             </Button>
         </Grid>
-        <!--Внутренняя разметка 1 строки - Меню-->
+        <!--Внутренняя разметка 1 строки - Каталог-->
         <Grid Grid.Row="1">
             <Grid.Background>
                 <ImageBrush ImageSource="..\Resources\background.png"></ImageBrush>

@@ -8,9 +8,9 @@ namespace AppShopArt.Classes
 {
     public class Item
     {
-        public string nameItem { get; set; }
+        public string name { get; set; }
         public string size { get; set; }
-        public int price { get; set; }
+        public double price { get; set; }
         public string level { get; set; }
     }
 }

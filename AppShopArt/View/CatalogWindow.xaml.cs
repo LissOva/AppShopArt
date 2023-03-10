@@ -21,9 +21,11 @@ namespace AppShopArt.View
     /// </summary>
     public partial class CatalogWindow : Window
     {
-        List<string> listSec = new List<string>();
+        List<string> listSec;
+        List<Classes.Item> listIt;
         private void GetSheetsName()
         {
+            List<string> listSec = new List<string>();
             if (File.Exists(App.fileCatalog))
             {
                 App.excelBook = App.excelApp.Workbooks.Open(App.fileCatalog);
@@ -41,7 +43,44 @@ namespace AppShopArt.View
             }
         }
 
-        private void GetItem() { }
+        private void GetItems(string nameSec)
+        {
+            App.excelSheet = (Excel.Worksheet)App.excelBook.Worksheets.get_Item(nameSec);
+            //App.excelCells = App.excelSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell);
+            App.excelCells = App.excelSheet.UsedRange;
+            listIt = new List<Classes.Item>();
+            Classes.Item item = new Classes.Item();
+            string paint = "Краски", pastel = "Пастель";
+            if (nameSec.Contains(paint)) { 
+                for (int i = 2; i <= App.excelCells.Rows.Count; ++i) {
+                    item.name = App.excelCells[i,1].Value2.ToString();
+                    item.size = App.excelCells[i,2].Value2.ToString();
+                    item.price = Convert.ToDouble(App.excelCells[i,3].Value2);
+                    item.level = App.excelCells[i,4].Value2.ToString();
+                    listIt.Add(item);
+                }
+            }
+            else if (nameSec.Contains(pastel))
+            {
+                for (int i = 2; i <= App.excelCells.Rows.Count; ++i)
+                {
+                    item.name = App.excelCells[i, 1].Value2.ToString();
+                    item.price = Convert.ToDouble(App.excelCells[i, 2].Value2);
+                    item.level = App.excelCells[i, 3].Value2.ToString();
+                    listIt.Add(item);
+                }
+            }
+            else
+            {
+                for (int i = 2; i <= App.excelCells.Rows.Count; ++i)
+                {
+                    item.name = App.excelCells[i, 1].Value2.ToString();
+                    item.price = Convert.ToDouble(App.excelCells[i, 2].Value2);
+                    listIt.Add(item);
+                }
+            }
+            listItem.ItemsSource= listIt;
+        }
         public CatalogWindow()
         {
             InitializeComponent();
@@ -86,7 +125,7 @@ namespace AppShopArt.View
 
         private void listSection_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            GetItems(listSection.SelectedItem.ToString());
         }
     }
 }

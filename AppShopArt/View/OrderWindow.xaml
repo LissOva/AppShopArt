@@ -47,7 +47,7 @@
             </Grid>
         </Grid>
         <!--Внутренняя разметка 2 строки - Подвал-->
-        <Grid Grid.Row="2" Background="Azure">
+        <Grid Grid.Row="2">
             <!--Элементы 2 строки - Подвал-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
