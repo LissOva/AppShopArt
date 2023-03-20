@@ -40,7 +40,7 @@
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="70" />
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="1" Name="orderSumText" Text="На карте:" Style="{StaticResource SmallText}"/>
+                <!--<TextBlock Grid.Row="1" Name="orderSumText" Text="На карте:" Style="{StaticResource SmallText}"/>-->
                 <Button Grid.Row="2" Name="butConfirm" Style="{StaticResource BasedBut}" VerticalAlignment="Bottom" Margin="5" Click="butConfirm_Click" MaxWidth="300">
                     <TextBlock Text="Подтвердить" Style="{StaticResource Title}"/>
                 </Button>

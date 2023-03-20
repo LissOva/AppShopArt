@@ -48,11 +48,11 @@ namespace AppShopArt.View
             App.excelSheet = (Excel.Worksheet)App.excelBook.Worksheets.get_Item(nameSec);
             //App.excelCells = App.excelSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell);
             App.excelCells = App.excelSheet.UsedRange;
-            listIt = new List<Classes.Item>();
-            Classes.Item item = new Classes.Item();
+            listIt = new List<Classes.Item>(); 
             string paint = "Краски", pastel = "Пастель";
             if (nameSec.Contains(paint)) { 
                 for (int i = 2; i <= App.excelCells.Rows.Count; ++i) {
+                    Classes.Item item = new Classes.Item();
                     item.name = App.excelCells[i,1].Value2.ToString();
                     item.size = App.excelCells[i,2].Value2.ToString();
                     item.price = Convert.ToDouble(App.excelCells[i,3].Value2);
@@ -64,6 +64,7 @@ namespace AppShopArt.View
             {
                 for (int i = 2; i <= App.excelCells.Rows.Count; ++i)
                 {
+                    Classes.Item item = new Classes.Item();
                     item.name = App.excelCells[i, 1].Value2.ToString();
                     item.price = Convert.ToDouble(App.excelCells[i, 2].Value2);
                     item.level = App.excelCells[i, 3].Value2.ToString();
@@ -74,6 +75,7 @@ namespace AppShopArt.View
             {
                 for (int i = 2; i <= App.excelCells.Rows.Count; ++i)
                 {
+                    Classes.Item item = new Classes.Item();
                     item.name = App.excelCells[i, 1].Value2.ToString();
                     item.price = Convert.ToDouble(App.excelCells[i, 2].Value2);
                     listIt.Add(item);
