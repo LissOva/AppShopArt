@@ -50,5 +50,22 @@
         <Style x:Key="ItemMain" TargetType="ListBox" BasedOn="{StaticResource TitleItem}">
             <Setter Property="FontSize" Value="16"/>
         </Style>
+        <!--DataGrid-->
+        <Style x:Key="DataGridHead" TargetType="DataGridColumnHeader">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="#FF0B0946"/>
+            <Setter Property="FontFamily" Value=".\Resources\vag-world-bold.ttf #VAG World Bold"/>
+            <Setter Property="Background" Value="Azure"/>
+        </Style>
+        <Style x:Key="DataGrid" TargetType="DataGrid">
+            <Setter Property="Background" Value="#340B0946"/>
+            <Setter Property="AlternatingRowBackground" Value="#99F0FFFF"/>
+            <Setter Property="BorderBrush" Value="#FF0B0946"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="ColumnHeaderStyle" Value="{StaticResource DataGridHead}"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="#FF0B0946"/>
+            <Setter Property="FontFamily" Value=".\Resources\vag-world-bold.ttf #VAG World Bold"/>
+        </Style>
     </Application.Resources>
 </Application>

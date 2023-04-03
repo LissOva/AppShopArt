@@ -23,9 +23,16 @@ namespace AppShopArt.View
     {
         List<string> listSec;
         List<Classes.Item> listIt;
+        public CatalogWindow()
+        {
+            InitializeComponent();
+            GetSheetsName();
+            this.DataContext = this;
+            amountOrderText.Text = App.amountOrder.ToString();
+        }
         private void GetSheetsName()
         {
-            List<string> listSec = new List<string>();
+            listSec = new List<string>();
             if (File.Exists(App.fileCatalog))
             {
                 App.excelBook = App.excelApp.Workbooks.Open(App.fileCatalog);
@@ -48,15 +55,17 @@ namespace AppShopArt.View
             App.excelSheet = (Excel.Worksheet)App.excelBook.Worksheets.get_Item(nameSec);
             //App.excelCells = App.excelSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell);
             App.excelCells = App.excelSheet.UsedRange;
-            listIt = new List<Classes.Item>(); 
+            listIt = new List<Classes.Item>();
             string paint = "Краски", pastel = "Пастель";
-            if (nameSec.Contains(paint)) { 
-                for (int i = 2; i <= App.excelCells.Rows.Count; ++i) {
+            if (nameSec.Contains(paint))
+            {
+                for (int i = 2; i <= App.excelCells.Rows.Count; ++i)
+                {
                     Classes.Item item = new Classes.Item();
-                    item.name = App.excelCells[i,1].Value2.ToString();
-                    item.size = App.excelCells[i,2].Value2.ToString();
-                    item.price = Convert.ToDouble(App.excelCells[i,3].Value2);
-                    item.level = App.excelCells[i,4].Value2.ToString();
+                    item.name = App.excelCells[i, 1].Value2.ToString();
+                    item.size = App.excelCells[i, 2].Value2.ToString();
+                    item.price = Convert.ToDouble(App.excelCells[i, 3].Value2);
+                    item.level = App.excelCells[i, 4].Value2.ToString();
                     listIt.Add(item);
                 }
             }
@@ -81,12 +90,7 @@ namespace AppShopArt.View
                     listIt.Add(item);
                 }
             }
-            listItem.ItemsSource= listIt;
-        }
-        public CatalogWindow()
-        {
-            InitializeComponent();
-            GetSheetsName();
+            listItem.ItemsSource = listIt;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -128,6 +132,24 @@ namespace AppShopArt.View
         private void listSection_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             GetItems(listSection.SelectedItem.ToString());
+        }
+
+        private void addItem_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.Item item = (sender as Button).DataContext as Classes.Item;
+            App.amountOrder = App.amountOrder + item.price;
+            amountOrderText.Text = App.amountOrder.ToString();
+            int index = App.listItemInOrder.FindIndex(x => x.name == item.name);
+            if (index != -1)
+            {
+                App.listItemInOrder[index].count++;
+                App.listItemInOrder[index].amount += App.listItemInOrder[index].price;
+            }
+            else
+            {
+                Classes.ItemInOrder itemInOrder = new Classes.ItemInOrder(item);
+                App.listItemInOrder.Add(itemInOrder);
+            }
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows;
 using Excel = Microsoft.Office.Interop.Excel;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace AppShopArt
 {
@@ -25,5 +26,14 @@ namespace AppShopArt
         public static Excel.Workbook excelBook;
         public static Excel.Worksheet excelSheet;
         public static Excel.Range excelCells;
+
+        public static Word.Application wordApp;
+        public static Word.Document wordDoc;
+        public static Word.Paragraph wordPar;
+        public static Word.Range wordRange;
+
+        public static double amountOrder = 0;
+        public static double myMoney = 0;
+        public static List<Classes.ItemInOrder> listItemInOrder = new List<Classes.ItemInOrder>();
     }
 }

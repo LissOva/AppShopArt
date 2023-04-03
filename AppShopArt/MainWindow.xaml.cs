@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
+using AppShopArt.View;
 
 namespace AppShopArt
 {
@@ -24,6 +25,9 @@ namespace AppShopArt
     {
         public MainWindow()
         {
+            Random random= new Random();
+            int n = random.Next(5000);
+            App.myMoney = Convert.ToDouble(n);
             InitializeComponent();
             try 
             {

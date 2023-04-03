@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:AppShopArt.View"
         mc:Ignorable="d"
         Title="Заказ"
-        Height="650" Width="750" MinHeight="650" MinWidth="450"
-        Closing="Window_Closing">
+        Height="650" Width="860" MinHeight="650" MinWidth="450"
+        Closing="Window_Closing"
+        Activated="Window_Activated">
     <Grid Background="#FFE1F7F9">
         <!--Главная разметка по строкам-->
         <Grid.RowDefinitions>
@@ -29,7 +30,7 @@
                 <TextBlock Text="Назад" Style="{StaticResource SmallText}"/>
             </Button>
         </Grid>
-        <!--Внутренняя разметка 1 строки - Меню-->
+        <!--Внутренняя разметка 1 строки-->
         <Grid Grid.Row="1">
             <Grid.Background>
                 <ImageBrush ImageSource="..\Resources\background.png"></ImageBrush>
@@ -37,13 +38,47 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="70" />
+                    <RowDefinition Height="35" />
                 </Grid.RowDefinitions>
+                <!--Разметка таблицы-->
+                <DataGrid x:Name="gridOrder" Style="{StaticResource DataGrid}"
+                   AutoGenerateColumns="False" CanUserAddRows ="False"   GridLinesVisibility="All"
+                   HeadersVisibility="Column" CanUserResizeColumns ="False"   ColumnWidth ="100">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header=" Название" Width="3*" Binding="{Binding Path=name}"/>
+                        <DataGridTextColumn Header=" Цена за шт." Width="*" Binding="{Binding price}"/>
+                        <DataGridTextColumn Header=" Количество"  Width="*"  Binding="{Binding count}"/>
+                        <DataGridTextColumn Header=" Всего"  Width="*"  Binding="{Binding amount}"/>
+                        <DataGridTemplateColumn Width="90">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel  Orientation="Horizontal">
+                                        <Button x:Name="add" Width="30" Style="{StaticResource BasedBut}" BorderThickness="1" Padding="0 0 3 0" Click="actionWithItem">
+                                            <Image Source="..\Resources\up-arrow.png" Stretch="Uniform"/>
+                                        </Button>
+                                        <Button x:Name="sub" Width="30" Style="{StaticResource BasedBut}" BorderThickness="1" Padding="0 0 3 0" Click="actionWithItem">
+                                            <Image Source="..\Resources\down-arrow.png" Stretch="Uniform"/>
+                                        </Button>
+                                        <Button x:Name="del" Width="30" Style="{StaticResource BasedBut}" BorderThickness="1" Click="actionWithItem">
+                                            <Image Source="..\Resources\rubbish-bin.png" Stretch="Uniform"/>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
                 <!--<TextBlock Grid.Row="1" Name="orderSumText" Text="На карте:" Style="{StaticResource SmallText}"/>-->
-                <Button Grid.Row="2" Name="butConfirm" Style="{StaticResource BasedBut}" VerticalAlignment="Bottom" Margin="5" Click="butConfirm_Click" MaxWidth="300">
-                    <TextBlock Text="Подтвердить" Style="{StaticResource Title}"/>
+                <Button Grid.Row="1" Name="butConfirm" Style="{StaticResource BasedBut}" HorizontalAlignment="Right" Margin="2" Click="butConfirm_Click">
+                    <TextBlock Text="Подтвердить" Style="{StaticResource SmallText}"/>
                 </Button>
+                <TextBlock Grid.Row="1" Style="{StaticResource SmallText}" HorizontalAlignment="Left">
+                    <Run Text="На карте:"/>
+                    <Run Text="0" x:Name="myCartText"/>
+                    <Run Text="Итого:"/>
+                    <Run Text="0" x:Name="amountFinish"/>
+                </TextBlock>
             </Grid>
         </Grid>
         <!--Внутренняя разметка 2 строки - Подвал-->
