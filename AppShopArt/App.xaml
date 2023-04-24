@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:AppShopArt"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <!--Шрифты-->
+        <!--Шрифты--><!--
         <Style x:Key="BasedText" TargetType="TextBlock">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -25,7 +25,7 @@
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="Foreground" Value="Gray"/>
         </Style>
-        <!--Кнопки-->
+        --><!--Кнопки--><!--
         <Style x:Key="BasedBut" TargetType="Button">
             <Setter Property="Background" Value="Azure"/>
             <Setter Property="BorderBrush" Value="#FF0B0946"/>
@@ -41,7 +41,7 @@
             <Setter Property="Margin" Value="5 10 5 10"/>
             <Setter Property="BorderThickness" Value="2"/>
         </Style>
-        <!--List Box-->
+        --><!--List Box--><!--
         <Style x:Key="TitleItem" TargetType="ListBox">
             <Setter Property="Foreground" Value="#FF0B0946"/>
             <Setter Property="FontFamily" Value=".\Resources\vag-world-bold.ttf #VAG World Bold"/>
@@ -50,7 +50,7 @@
         <Style x:Key="ItemMain" TargetType="ListBox" BasedOn="{StaticResource TitleItem}">
             <Setter Property="FontSize" Value="16"/>
         </Style>
-        <!--DataGrid-->
+        --><!--DataGrid--><!--
         <Style x:Key="DataGridHead" TargetType="DataGridColumnHeader">
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Foreground" Value="#FF0B0946"/>
@@ -66,6 +66,6 @@
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="Foreground" Value="#FF0B0946"/>
             <Setter Property="FontFamily" Value=".\Resources\vag-world-bold.ttf #VAG World Bold"/>
-        </Style>
+        </Style>-->
     </Application.Resources>
 </Application>

@@ -66,6 +66,7 @@ namespace AppShopArt.View
             Word.Range wordRange;
             Word.InlineShape wordShape;
             Word.Table wordTable;
+            App.checkFlag = false;
             try
             {
                 wordApp = new Word.Application();
@@ -73,15 +74,16 @@ namespace AppShopArt.View
             }
             catch
             {
-                MessageBox.Show("Товарный чек в Word создать не удалось.", "Чек ворд", MessageBoxButton.OK, MessageBoxImage.Error);
-                MessageBox.Show("Товарный чек в Word создать не удалось");
+                MessageBox.Show("Товарный чек в Word создать не удалось.", "Чек", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if (App.myMoney < App.amountOrder) {
-                MessageBox.Show("У вас недостаточно средств", "Недостаточно средств", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("У вас недостаточно средств.", "Недостаточно средств", MessageBoxButton.OK, MessageBoxImage.Error);
+                App.lastTransact = false;
                 return;
             }
-
+            App.lastTransact = true;
+            App.myMoney -= App.amountOrder;
             DateTime dtNow = DateTime.Now;
 
             wordDoc = wordApp.Documents.Add();
@@ -97,7 +99,7 @@ namespace AppShopArt.View
 
             wordPar = wordDoc.Paragraphs.Add();
             wordRange = wordPar.Range;
-            wordRange.Text = "Чек";
+            wordRange.Text = "Чек - " + dtNow.Ticks.ToString();
             wordRange.Font.Color = Word.WdColor.wdColorBlack;
             wordRange.Font.Size = 25;
             wordRange.InsertParagraphAfter();
@@ -144,11 +146,12 @@ namespace AppShopArt.View
             wordDoc.Saved = true;
             string pathDoc = @"C:\Users\lizik\OneDrive\Рабочий стол\" + "Чек" + dtNow.Year + "_" + dtNow.Month + "_" + dtNow.Day + "_" +dtNow.Ticks;
 
-            wordDoc.SaveAs(pathDoc + ".docx");
             wordDoc.SaveAs(pathDoc + ".pdf", Word.WdExportFormat.wdExportFormatPDF);
             wordDoc.Close(true, null, null);
             wordDoc = null;
 
+            MessageBox.Show("Чек создан на вашем рабочем столе", "Чек", MessageBoxButton.OK, MessageBoxImage.Information);
+            App.checkFlag = true;
             wordApp.Quit();
             System.Runtime.InteropServices.Marshal.FinalReleaseComObject(wordApp);
             GC.Collect();

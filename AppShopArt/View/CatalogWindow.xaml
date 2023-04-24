@@ -30,12 +30,12 @@
             </Grid.ColumnDefinitions>
             <!--Элементы 0 строки - Заголовок-->
             <Image Grid.Column="0" Source="..\Resources\paint-128.png" Stretch="Uniform" HorizontalAlignment="Left"/>
-            <TextBlock Grid.Column="1" Text="Каталог" Style="{StaticResource MainTitle}"/>
-            <Button Name="openExcel" Grid.Column="2" Style="{StaticResource butNavig}" Click="openExcel_Click">
-                <TextBlock Text="Файл" Style="{StaticResource SmallText}"/>
+            <TextBlock Grid.Column="1" Text="Каталог"  />
+            <Button Name="openExcel" Grid.Column="2"   Click="openExcel_Click">
+                <TextBlock Text="Файл"  />
             </Button>
-            <Button Name="butBack" Grid.Column="3" Style="{StaticResource butNavig}" Click="butBack_Click">
-                <TextBlock Text="Назад" Style="{StaticResource SmallText}"/>
+            <Button Name="butBack" Grid.Column="3"   Click="butBack_Click">
+                <TextBlock Text="Назад"  />
             </Button>
         </Grid>
         <!--Внутренняя разметка 1 строки - Каталог-->
@@ -56,14 +56,14 @@
                         <RowDefinition Height="20"/>
                     </Grid.RowDefinitions>
                     <!--Панель разделов-->
-                    <ListBox x:Name="listSection" Grid.Row="0" Style="{StaticResource TitleItem}" SelectionChanged="listSection_SelectionChanged" Background="#99F0FFFF" BorderBrush="{x:Null}" />
-                    <TextBlock Grid.Row="1" Style="{StaticResource BasedText}" HorizontalAlignment="Left">
+                    <ListBox x:Name="listSection" Grid.Row="0"   SelectionChanged="listSection_SelectionChanged" Background="#99F0FFFF" BorderBrush="{x:Null}" />
+                    <TextBlock Grid.Row="1"   HorizontalAlignment="Left">
                         <Run Text="Сумма:"/>
                         <Run Name="amountOrderText" Text="0"/>
                     </TextBlock>
                 </Grid>
                 <!--Каталог-->
-                <ListBox x:Name="listItem" Grid.Column="1" Style="{StaticResource ItemMain}" SelectionChanged="listSection_SelectionChanged" Background="#340B0946" BorderBrush="{x:Null}" HorizontalAlignment="Center" Width="655">
+                <ListBox x:Name="listItem" Grid.Column="1"   SelectionChanged="listSection_SelectionChanged" Background="#340B0946" BorderBrush="{x:Null}" HorizontalAlignment="Center" Width="655">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Height="80" Width="620">
@@ -97,7 +97,7 @@
                                     <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding Path=size}" />
                                 </Grid>
                                 <!--Добавить в заказ-->
-                                <Button Grid.Column="3" Name="addItem" Margin="0 20 0 20" Content="Добавить" Style="{StaticResource BasedBut}" Click="addItem_Click" Background="#99F0FFFF"/>
+                                <Button Grid.Column="3" Name="addItem" Margin="0 20 0 20" Content="Добавить"   Click="addItem_Click" Background="#99F0FFFF"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -111,8 +111,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="Copyright © Kolygina Elizaveta" Style="{StaticResource HelpText}"/>
-            <TextBlock Grid.Column="1" Text="Telegram: @LiziksSova" Style="{StaticResource HelpText}"/>
+            <TextBlock Grid.Column="0" Text="Copyright © Kolygina Elizaveta"  />
+            <TextBlock Grid.Column="1" Text="Telegram: @LiziksSova"  />
         </Grid>
     </Grid>
 </Window>

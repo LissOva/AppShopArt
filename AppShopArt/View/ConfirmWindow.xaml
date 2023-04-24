@@ -26,10 +26,10 @@
             </Grid.ColumnDefinitions>
             <!--Элементы 0 строки - Заголовок-->
             <Image Grid.Column="0" Source="..\Resources\cart-100.png" Stretch="Uniform"></Image>
-            <TextBlock Grid.Column="1" Text="Подтверждение" Style="{StaticResource MainTitle}"/>
+            <TextBlock Grid.Column="1" Text="Подтверждение"  />
             <!--Кнопка навигации - Назад-->
-            <Button Name="butBack" Grid.Column="2" Style="{StaticResource butNavig}" Click="butBack_Click">
-                <TextBlock Text="Назад" Style="{StaticResource SmallText}"/>
+            <Button Name="butBack" Grid.Column="2"   Click="butBack_Click">
+                <TextBlock Text="Назад"  />
             </Button>
         </Grid>
         <!--Внутренняя разметка 1 строки - Меню-->
@@ -38,8 +38,8 @@
                 <ImageBrush ImageSource="..\Resources\background.png"></ImageBrush>
             </Grid.Background>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Name="orderSumText" Text="Сумма заказа" Style="{StaticResource BasedText}" FontSize="15"/>
-                <TextBlock Name="allSumText" Text="Всего денег " Style="{StaticResource BasedText}" FontSize="15"/>
+                <TextBlock Name="orderSumText" Text="Сумма заказа"   FontSize="15"/>
+                <TextBlock Name="allSumText" Text="Всего денег "   FontSize="15"/>
             </StackPanel>
            
         </Grid>
@@ -50,8 +50,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="Copyright © Kolygina Elizaveta" Style="{StaticResource HelpText}"/>
-            <TextBlock Grid.Column="1" Text="Telegram: @LiziksSova" Style="{StaticResource HelpText}"/>
+            <TextBlock Grid.Column="0" Text="Copyright © Kolygina Elizaveta"  />
+            <TextBlock Grid.Column="1" Text="Telegram: @LiziksSova"  />
         </Grid>
     </Grid>
 </Window>

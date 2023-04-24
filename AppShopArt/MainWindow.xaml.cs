@@ -25,10 +25,11 @@ namespace AppShopArt
     {
         public MainWindow()
         {
-            Random random= new Random();
-            int n = random.Next(5000);
-            App.myMoney = Convert.ToDouble(n);
+            Application.ResourceAssembly = typeof(MainWindow).Assembly;
             InitializeComponent();
+            Random random= new Random();
+            int n = random.Next(1000, 5000);
+            App.myMoney = Convert.ToDouble(n);
             try 
             {
                 App.excelApp = new Excel.Application();

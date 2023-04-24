@@ -29,6 +29,7 @@ namespace AppShopArt.View
             GetSheetsName();
             this.DataContext = this;
             amountOrderText.Text = App.amountOrder.ToString();
+            this.Show();
         }
         private void GetSheetsName()
         {

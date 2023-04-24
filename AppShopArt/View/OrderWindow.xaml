@@ -25,9 +25,9 @@
             </Grid.ColumnDefinitions>
             <!--Элементы 0 строки - Заголовок-->
             <Image Grid.Column="0" Source="..\Resources\cart-100.png" Stretch="Uniform"></Image>
-            <TextBlock Grid.Column="1" Text="Заказ" Style="{StaticResource MainTitle}"/>
-            <Button Name="butBack" Grid.Column="2" Style="{StaticResource butNavig}" Click="butBack_Click">
-                <TextBlock Text="Назад" Style="{StaticResource SmallText}"/>
+            <TextBlock Grid.Column="1" Text="Заказ"  />
+            <Button Name="butBack" Grid.Column="2"   Click="butBack_Click">
+                <TextBlock Text="Назад"  />
             </Button>
         </Grid>
         <!--Внутренняя разметка 1 строки-->
@@ -41,7 +41,7 @@
                     <RowDefinition Height="35" />
                 </Grid.RowDefinitions>
                 <!--Разметка таблицы-->
-                <DataGrid x:Name="gridOrder" Style="{StaticResource DataGrid}"
+                <DataGrid x:Name="gridOrder"  
                    AutoGenerateColumns="False" CanUserAddRows ="False"   GridLinesVisibility="All"
                    HeadersVisibility="Column" CanUserResizeColumns ="False"   ColumnWidth ="100">
                     <DataGrid.Columns>
@@ -53,13 +53,13 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel  Orientation="Horizontal">
-                                        <Button x:Name="add" Width="30" Style="{StaticResource BasedBut}" BorderThickness="1" Padding="0 0 3 0" Click="actionWithItem">
+                                        <Button x:Name="add" Width="30"   BorderThickness="1" Padding="0 0 3 0" Click="actionWithItem">
                                             <Image Source="..\Resources\up-arrow.png" Stretch="Uniform"/>
                                         </Button>
-                                        <Button x:Name="sub" Width="30" Style="{StaticResource BasedBut}" BorderThickness="1" Padding="0 0 3 0" Click="actionWithItem">
+                                        <Button x:Name="sub" Width="30"   BorderThickness="1" Padding="0 0 3 0" Click="actionWithItem">
                                             <Image Source="..\Resources\down-arrow.png" Stretch="Uniform"/>
                                         </Button>
-                                        <Button x:Name="del" Width="30" Style="{StaticResource BasedBut}" BorderThickness="1" Click="actionWithItem">
+                                        <Button x:Name="del" Width="30"   BorderThickness="1" Click="actionWithItem">
                                             <Image Source="..\Resources\rubbish-bin.png" Stretch="Uniform"/>
                                         </Button>
                                     </StackPanel>
@@ -69,11 +69,11 @@
 
                     </DataGrid.Columns>
                 </DataGrid>
-                <!--<TextBlock Grid.Row="1" Name="orderSumText" Text="На карте:" Style="{StaticResource SmallText}"/>-->
-                <Button Grid.Row="1" Name="butConfirm" Style="{StaticResource BasedBut}" HorizontalAlignment="Right" Margin="2" Click="butConfirm_Click">
-                    <TextBlock Text="Подтвердить" Style="{StaticResource SmallText}"/>
+                <!--<TextBlock Grid.Row="1" Name="orderSumText" Text="На карте:"  />-->
+                <Button Grid.Row="1" Name="butConfirm"   HorizontalAlignment="Right" Margin="2" Click="butConfirm_Click">
+                    <TextBlock Text="Подтвердить"  />
                 </Button>
-                <TextBlock Grid.Row="1" Style="{StaticResource SmallText}" HorizontalAlignment="Left">
+                <TextBlock Grid.Row="1"   HorizontalAlignment="Left">
                     <Run Text="На карте:"/>
                     <Run Text="0" x:Name="myCartText"/>
                     <Run Text="Итого:"/>
@@ -88,8 +88,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="Copyright © Kolygina Elizaveta" Style="{StaticResource HelpText}"/>
-            <TextBlock Grid.Column="1" Text="Telegram: @LiziksSova" Style="{StaticResource HelpText}"/>
+            <TextBlock Grid.Column="0" Text="Copyright © Kolygina Elizaveta"  />
+            <TextBlock Grid.Column="1" Text="Telegram: @LiziksSova"  />
         </Grid>
     </Grid>
 </Window>

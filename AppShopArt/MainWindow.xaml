@@ -8,6 +8,7 @@
         Title="Художник"
         Height="650" Width="450" MinHeight="650" MinWidth="450"
         Closing="Window_Closing"
+        
         >
     <Grid Background="#FFE1F7F9">
         <!--Главная разметка по строкам-->
@@ -25,9 +26,9 @@
             </Grid.ColumnDefinitions>
             <!--Элементы 0 строки - Заголовок-->
             <Image Grid.Column="0" Source=".\Resources\painting-tools.png" Stretch="Uniform"></Image>
-            <TextBlock Grid.Column="1" Text="Главная" Style="{StaticResource MainTitle}"/>
-            <Button Name="butExit" Grid.Column="2" Style="{StaticResource butNavig}" Click="butExit_Click">
-                <TextBlock Text="Выход" Style="{StaticResource SmallText}"/>
+            <TextBlock Grid.Column="1" Text="Главная"  />
+            <Button Name="butExit" Grid.Column="2"   Click="butExit_Click">
+                <TextBlock Text="Выход"  />
             </Button>
         </Grid>
         <!--Внутренняя разметка 1 строки - Меню-->
@@ -42,36 +43,36 @@
             </Grid.RowDefinitions>
             <!--Элементы 1 строки - Меню-->
             <!--Кнопка - Каталог-->
-            <Button Name="butPriceList" Grid.Row="0" Style="{StaticResource butMenu}" Click="butPriceList_Click">
+            <Button Name="butPriceList" Grid.Row="0"   Click="butPriceList_Click">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition MaxWidth="130"/>
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
                     <Image Grid.Column="0" Source=".\Resources\paint-128.png" Stretch="Uniform" MaxWidth="100" MaxHeight="100"/>
-                    <TextBlock Grid.Column="1" Text="Каталог" Style="{StaticResource Title}"/>
+                    <TextBlock Grid.Column="1" Text="Каталог"  />
                 </Grid>
             </Button>
             <!--Кнопка - Заказ-->
-            <Button Name="butOrder" Grid.Row="1" Style="{StaticResource butMenu}" Click="butOrder_Click">
+            <Button Name="butOrder" Grid.Row="1"   Click="butOrder_Click">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition MaxWidth="130"/>
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
                     <Image Grid.Column="0" Source=".\Resources\cart-100.png" Stretch="Uniform" MaxWidth="100" MaxHeight="100"/>
-                    <TextBlock Grid.Column="1" Text="Заказ" Style="{StaticResource Title}"/>
+                    <TextBlock Grid.Column="1" Text="Заказ"  />
                 </Grid>
             </Button>
             <!--Кнопка - Редактор каталога-->
-            <Button Name="butManager" Grid.Row="2" Style="{StaticResource butMenu}" Click="butManager_Click">
+            <Button Name="butManager" Grid.Row="2"   Click="butManager_Click">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition MaxWidth="130"/>
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
                     <Image Grid.Column="0" Source=".\Resources\edit-100.png" Stretch="Uniform" MaxWidth="100" MaxHeight="100"/>
-                    <TextBlock Grid.Column="1" Text="Ред. каталога" Style="{StaticResource Title}" TextWrapping="WrapWithOverflow"/>
+                    <TextBlock Grid.Column="1" Text="Ред. каталога"   TextWrapping="WrapWithOverflow"/>
                 </Grid>
             </Button>
         </Grid>
@@ -82,8 +83,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="Copyright © Kolygina Elizaveta" Style="{StaticResource HelpText}"/>
-            <TextBlock Grid.Column="1" Text="Telegram: @LiziksSova" Style="{StaticResource HelpText}"/>
+            <TextBlock Grid.Column="0" Text="Copyright © Kolygina Elizaveta"  />
+            <TextBlock Grid.Column="1" Text="Telegram: @LiziksSova"  />
         </Grid>
     </Grid>
 </Window>

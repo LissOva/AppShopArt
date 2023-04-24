@@ -19,8 +19,8 @@ namespace AppShopArt
         public static string login = "Admin";
         public static string password = "@dminPas";
 
-        public static string pathExe = Environment.CurrentDirectory;
-        public static string fileCatalog = pathExe + @"\Catalog.xlsx";
+        public static string pathExe = "C:\\D-drive-67390\\Files\\Учеба\\2курс\\МДК01.01\\AppShopArt\\AppShopArt\\bin\\Debug\\";
+        public static string fileCatalog = "C:\\D-drive-67390\\Files\\Учеба\\2курс\\МДК01.01\\AppShopArt\\AppShopArt\\bin\\Debug\\Catalog.xlsx";
 
         public static Excel.Application excelApp;
         public static Excel.Workbook excelBook;
@@ -31,9 +31,11 @@ namespace AppShopArt
         public static Word.Document wordDoc;
         public static Word.Paragraph wordPar;
         public static Word.Range wordRange;
+        public static bool checkFlag = false;
 
         public static double amountOrder = 0;
         public static double myMoney = 0;
+        public static bool lastTransact = true;
         public static List<Classes.ItemInOrder> listItemInOrder = new List<Classes.ItemInOrder>();
     }
 }

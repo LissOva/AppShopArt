@@ -24,9 +24,9 @@
             </Grid.ColumnDefinitions>
             <!--Элементы 0 строки - Заголовок-->
             <Image Grid.Column="0" Source="..\Resources\edit-100.png" Stretch="Uniform"></Image>
-            <TextBlock Grid.Column="1" Text="Редактор каталога" Style="{StaticResource MainTitle}"/>
-            <Button Name="butBack" Grid.Column="2" Style="{StaticResource butNavig}" Click="butBack_Click">
-                <TextBlock Text="Назад" Style="{StaticResource SmallText}"/>
+            <TextBlock Grid.Column="1" Text="Редактор каталога"  />
+            <Button Name="butBack" Grid.Column="2"   Click="butBack_Click">
+                <TextBlock Text="Назад"  />
             </Button>
         </Grid>
         <!--Внутренняя разметка 1 строки - Меню-->
@@ -42,8 +42,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="Copyright © Kolygina Elizaveta" Style="{StaticResource HelpText}"/>
-            <TextBlock Grid.Column="1" Text="Telegram: @LiziksSova" Style="{StaticResource HelpText}"/>
+            <TextBlock Grid.Column="0" Text="Copyright © Kolygina Elizaveta"  />
+            <TextBlock Grid.Column="1" Text="Telegram: @LiziksSova"  />
         </Grid>
     </Grid>
 </Window>
